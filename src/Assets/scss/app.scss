@@ -1,0 +1,165 @@
+@import 'functions';
+
+@import 'reset';
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap');
+
+/* Main Classes */
+
+.container {
+  max-width: rem-calc(1060);
+  margin: auto;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  background: #c2c2c2 linear-gradient(#c2c2c2 rem-calc(56), #bab6c0 0%, #c2c2c2 100%);
+  background-repeat: repeat-x;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Header */
+
+header {
+  background: linear-gradient(#e6e6e6 0%, #dedede 100%);
+  height: rem-calc(56);
+  box-shadow: 0 rem-calc(0) rem-calc(15) rem-calc(3) rgba(#000000, 0.15);
+
+  #logo {
+    padding-top: rem-calc(10);
+    display: inline-flex;
+  }
+
+  #cart {
+
+    float:right;
+    display: inline-flex;
+
+    button {
+      background: url('../img/cart_icon.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: rem-calc(56);
+      height: rem-calc(56);
+      border: none;
+    }
+
+  }
+
+}
+
+/* Content */
+
+#content {
+
+  min-height: rem-calc(684);
+
+  #game-of-the-week {
+
+    h1 {
+
+      font-size: rem-calc(15);
+      color: #262626;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: rem-calc(40);
+
+    }
+
+    min-height: rem-calc(360);
+
+    img {
+      margin: rem-calc(20) 0;
+      box-shadow: 0 rem-calc(1) rem-calc(5) rem-calc(0) rgba(#000000, 0.3);
+    }
+
+  }
+
+  ul#products {
+
+    display: inline-flex;
+
+    li.product{
+
+      max-width: rem-calc(196);
+      margin-right: rem-calc(20);
+      min-height: rem-calc(195);
+      background: #e1e1e1;
+      box-shadow: 0 rem-calc(1) rem-calc(5) rem-calc(0) rgba(#000000, 0.15);
+      position: relative;
+
+      &:last-child {
+
+        margin-right: 0;
+
+      }
+
+      .info {
+
+        padding: rem-calc(7);
+
+        &.owned {
+
+          opacity: .5;
+
+        }
+
+        h2 {
+
+          font-size: rem-calc(14);
+          line-height: rem-calc(17);
+          font-weight: 600;
+          text-transform: uppercase;
+
+        }
+
+        .price-area {
+
+          position: absolute;
+          bottom:rem-calc(10);
+          right:rem-calc(7);
+
+          .discount {
+
+            background: #00905e;
+            padding: rem-calc(5) rem-calc(10);
+            border-radius: rem-calc(5);
+            margin-right: rem-calc(5);
+            color: #f2f2f2;
+            font-size: rem-calc(13);
+            font-weight: 600;
+
+          }
+
+          .price {
+
+            color: #404040;
+            border-radius: rem-calc(5);
+            border: solid rem-calc(1) #a9a9a9;
+            padding: rem-calc(5) rem-calc(10);
+            box-shadow: 0 rem-calc(1) rem-calc(3) rem-calc(0) rgba(#000000, 0.25);
+            background: transparent;
+            font-size: rem-calc(13);
+            font-weight: 600;
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+
+}
