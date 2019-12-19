@@ -11,6 +11,7 @@ class GameOfTheWeek extends Component {
         { products.map((product)=> (
           <img src={product.image} alt={product.name} key={product.id} />
         )) }
+        <button id="secret">A secret button that you should totally implement</button>
       </div>
     );
   }

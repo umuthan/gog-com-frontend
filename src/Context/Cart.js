@@ -6,15 +6,17 @@ const CartDispatchContext = React.createContext()
 function cartReducer(state, action) {
   switch (action.type) {
     case 'addToCart': {
+      let newCart = state.cart.concat(action.product);
       return {
-        cart: state.cart.concat(action.product),
-        total: 0
+        cart: newCart,
+        total: calculateCartTotal(newCart)
       }
     }
     case 'removeFromCart': {
+      let newCart = state.cart.filter(e => e.id !== action.productID);
       return {
-        cart: [],
-        total: 0
+        cart: newCart,
+        total: calculateCartTotal(newCart)
       }
     }
     case 'clearCart': {
@@ -27,6 +29,16 @@ function cartReducer(state, action) {
       throw new Error(`Unhandled action type: ${action.type}`)
     }
   }
+}
+
+function calculateCartTotal(cart) {
+
+  let total = 0;
+
+  cart.map((product) => total = total+product.price);
+
+  return total;
+
 }
 
 function CartProvider({children}) {

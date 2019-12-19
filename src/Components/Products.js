@@ -1,12 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { products } from '../Data/Products';
+import { useCart, useCartDispatch } from '../Context/Cart';
 
 import Product from './Product';
 
-class Products extends Component {
+function Products() {
 
-  render() {
+    const dispatch = useCartDispatch();
+    const {cart} = useCart();
+
+    const addToCart = (product) => {
+      dispatch({
+        type: 'addToCart',
+        product: {
+          id : product.id,
+          name: product.name,
+          thumbnail: product.thumbnail,
+          price: product.price
+        }
+      })
+    }
+
+    const inCart = (id) => {
+      let isItInCart = false;
+
+      cart.forEach(function(product) {
+        if(product.id === id) isItInCart = true;
+      })
+
+      return isItInCart;
+    }
+
     return (
       <ul id="products">
       { products.map((product) => (
@@ -18,11 +43,12 @@ class Products extends Component {
           price={product.price}
           discount={product.discount}
           owned={product.owned}
+          addToCartCallback={addToCart}
+          inCart={inCart(product.id)}
         />
       ))}
       </ul>
     );
-  }
 
 }
 

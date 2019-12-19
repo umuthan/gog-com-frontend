@@ -8,6 +8,7 @@ import Products from './Components/Products';
 import GameOfTheWeek from './Components/GameOfTheWeek';
 
 function App() {
+
   return (
     <CartProvider>
       <Header />
