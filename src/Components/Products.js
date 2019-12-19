@@ -1,3 +1,11 @@
+/**
+ * Gog.com Front End - Products Component
+ * https://github.com/umuthan/gog-com-frontend
+ *
+ * Author: Umuthan Uyan
+ *
+ */
+
 import React from 'react';
 
 import { products } from '../Data/Products';

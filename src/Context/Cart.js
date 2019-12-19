@@ -1,8 +1,22 @@
-import React from 'react'
+/**
+ * Gog.com Front End - Cart Context
+ * https://github.com/umuthan/gog-com-frontend
+ *
+ * Author: Umuthan Uyan
+ *
+ */
 
-const CartContext = React.createContext()
-const CartDispatchContext = React.createContext()
+import React from 'react';
 
+const CartContext = React.createContext();
+const CartDispatchContext = React.createContext();
+
+/*
+**
+** Cart functions like adding an item,
+** removing an item, clear all the cart.
+**
+*/
 function cartReducer(state, action) {
   switch (action.type) {
     case 'addToCart': {
@@ -31,6 +45,11 @@ function cartReducer(state, action) {
   }
 }
 
+/*
+**
+** Calculate total amount of cart
+**
+*/
 function calculateCartTotal(cart) {
 
   let total = 0;
@@ -41,6 +60,11 @@ function calculateCartTotal(cart) {
 
 }
 
+/*
+**
+** Defining Cart provider with default values.
+**
+*/
 function CartProvider({children}) {
   const [state, dispatch] = React.useReducer(cartReducer, {
     cart: [],
@@ -55,6 +79,12 @@ function CartProvider({children}) {
   )
 }
 
+/*
+**
+** useCart function to get Cart context values
+** like cart array and total amount of cart
+**
+*/
 function useCart() {
   const context = React.useContext(CartContext)
   if (context === undefined) {
@@ -63,6 +93,12 @@ function useCart() {
   return context
 }
 
+/*
+**
+** useCartDispatch function for actions in cart
+** like adding and item, removeing an item or clearing all the cart
+**
+*/
 function useCartDispatch() {
   const context = React.useContext(CartDispatchContext)
   if (context === undefined) {

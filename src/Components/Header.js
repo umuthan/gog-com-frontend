@@ -1,3 +1,11 @@
+/**
+ * Gog.com Front End - Header Component
+ * https://github.com/umuthan/gog-com-frontend
+ *
+ * Author: Umuthan Uyan
+ *
+ */
+
 import React, { Component } from 'react';
 
 import Cart from './Cart';

@@ -1,3 +1,11 @@
+/**
+ * Gog.com Front End - App Component
+ * https://github.com/umuthan/gog-com-frontend
+ *
+ * Author: Umuthan Uyan
+ *
+ */
+
 import React from 'react';
 import './Assets/scss/app.scss';
 

@@ -1,3 +1,11 @@
+/**
+ * Gog.com Front End - Cart Component
+ * https://github.com/umuthan/gog-com-frontend
+ *
+ * Author: Umuthan Uyan
+ *
+ */
+
 import React, { useEffect, useState, useRef } from 'react';
 
 import { useCartDispatch, useCart } from '../Context/Cart';
@@ -7,6 +15,12 @@ function Cart(props) {
   const {cart, total} = useCart();
   const dispatch = useCartDispatch();
 
+  /*
+  **
+  ** Remove selected item from Cart Context
+  **
+  */
+
   const removeFromCart = (productID) => {
     dispatch({
       type: 'removeFromCart',
@@ -14,11 +28,23 @@ function Cart(props) {
     })
   }
 
+  /*
+  **
+  ** Clear Cart function for clearing Cart Context
+  **
+  */
+
   const clearCart = () => {
     dispatch({
       type: 'clearCart'
     })
   }
+
+  /*
+  **
+  ** Cart open and close function for inside and outside click
+  **
+  */
 
   const node = useRef();
 

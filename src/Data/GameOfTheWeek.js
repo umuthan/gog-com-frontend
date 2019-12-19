@@ -1,5 +1,5 @@
 /**
- * Gog.com Front End - Sample data  of Game Of The Week
+ * Gog.com Front End - Sample data of Game Of The Week
  * https://github.com/umuthan/gog-com-frontend
  *
  * Author: Umuthan Uyan
