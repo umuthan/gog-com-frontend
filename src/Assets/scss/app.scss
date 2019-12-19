@@ -76,6 +76,7 @@ header {
 
       &.true {
 
+        border-right: rem-calc(1) solid #d9d9d9;
         background: #ffffff;
 
       }
@@ -129,7 +130,7 @@ header {
 
           button#clear-cart {
 
-            border: 1px solid #865bba;
+            border: rem-calc(1) solid #865bba;
             border-radius: rem-calc(5);
             padding: rem-calc(15) rem-calc(25);
             font-size: rem-calc(14);
@@ -251,7 +252,7 @@ header {
     button#secret {
 
       text-transform: uppercase;
-      border: 1px solid #258363;
+      border: rem-calc(1) solid #258363;
       background: #00c78c linear-gradient(#00c78c 0%, #00915f 100%);
       padding: rem-calc(10) rem-calc(15);
       border-radius: rem-calc(5);
